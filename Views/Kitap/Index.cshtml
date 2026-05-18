@@ -1,0 +1,39 @@
+@model IEnumerable<Kitap>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Kitap Listesi</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kitap Adı</th>
+            <th>Yazar</th>
+            <th>Tür</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+            <th>Yayın Yılı</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ad</td>
+                <td>@item.Yazar</td>
+                <td>@item.Tur</td>
+                //tl ondalık gösterimi için
+                <td>@item.Fiyat.ToString("C2", new System.Globalization.CultureInfo("tr-TR"))</td>
+                <td>@item.Stok</td>
+                <td>@item.YayinYili</td>
+                <td><a href="" class="btn btn-sm btn-primary">Detay</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="KitapEkle" class="btn btn-success mt-2">Yeni Kitap Ekle</a>

@@ -1,0 +1,11 @@
+@model DetayViewModel
+
+<h3>Kitap Detayları</h3>
+<p>ViewData ile gelen kitap: @(((Kitap)ViewData["Kitap"]).Ad)</p>
+<p>ViewBag ile gelen kitap: @ViewBag.Book.Ad</p>
+<p>Model ile gelen kitap: @Model.Kitap.Ad</p>
+<p>Model ile gelen yayınevi bilgisi: @Model.Yayinevi.Ad</p>
+<div>@Model.Yayinevi.Sehir</div>
+<p>Html Helpers: HTML kodlarını kullanmadan HTML etiketleri üretmemizi sağlayan C# metodlarıdır.</p>
+<p>Render: Razor syntaxı ile oluşturulmuş C# kodlarının tarayıcıların anlayacağı şekilde HTML'e dönüştürülmesine Render denir.</p>
+<p>Tag Helper: HTML etiketlerinin attribute'lerini oluşturmada kullanılan asp- ile başlayan yardımcı attribute'lerdir.</p>

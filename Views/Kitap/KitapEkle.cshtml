@@ -1,0 +1,45 @@
+@model Kitap
+@{
+    ViewData["Title"] = "KitapEkle";
+    ViewData["Desc"] = "Kitap ekleme sayfası";
+}
+
+<h1>Kitap Ekle</h1>
+
+<form asp-action="KitapEkle" asp-controller="Kitap" method="post">
+    <div class="mb-3">
+        <label asp-for="Ad" class="form-label"></label>
+        <input asp-for="Ad" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Yazar" class="form-label"></label>
+        <input asp-for="Yazar" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Tur" class="form-label"></label>
+        <select asp-for="Tur" class="form-control">
+            <option value="">-- Tür Seçin --</option>
+            <option>Roman</option>
+            <option>Bilim Kurgu</option>
+            <option>Distopya</option>
+            <option>Tarih</option>
+            <option>Çocuk</option>
+            <option>Biyografi</option>
+            <option>Felsefe</option>
+            <option>Diğer</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Fiyat" class="form-label"></label>
+        <input asp-for="Fiyat" type="number" step="0.01" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Stok" class="form-label"></label>
+        <input asp-for="Stok" type="number" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="YayinYili" class="form-label"></label>
+        <input asp-for="YayinYili" type="number" class="form-control" />
+    </div>
+    <input type="submit" name="btnKaydet" value="Kaydet" class="btn btn-primary" />
+</form>
