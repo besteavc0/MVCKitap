@@ -18,7 +18,7 @@ namespace Sube2.KitapMVC.Controllers
 
         public ViewResult KitapDetay()
         {
-            dynamic kitap = new Kitap();
+            Kitap kitap = new Kitap();
             kitap.Ad = "Suç ve Ceza";
             kitap.Yazar = "Dostoyevski";
 
@@ -26,11 +26,7 @@ namespace Sube2.KitapMVC.Controllers
             yayinevi.Ad = "İş Bankası Kültür Yayınları";
             yayinevi.Sehir = "İstanbul";
 
-            
-            ViewData["Kitap"] = kitap;
-            ViewBag.Book = kitap;
-
-            var vm = new DetayViewModel();
+            var vm = new DetayViewModel(); //tip güvenli
             vm.Yayinevi = yayinevi;
             vm.Kitap = kitap;
 
